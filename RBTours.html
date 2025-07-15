@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RB Tours - Premium Wilpattu Safari Experiences</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c5e1a;
+            --secondary-color: #f8b400;
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581876812576-0a5354690149?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 10px 25px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-card .card-body {
+            padding: 20px;
+        }
+        
+        .service-card .card-title {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .gallery-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .vehicle-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .vehicle-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .contact-info {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 99;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">RB TOURS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vehicles">Our Fleet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1 class="hero-title">Experience Wilpattu Like Never Before</h1>
+            <p class="hero-subtitle">Premium Jeep Safaris & Transportation Services in Sri Lanka</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Book Your Safari Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title">About RB Tours</h2>
+                    <p>RB Tours is your premier provider of Wilpattu National Park safari experiences and transportation services in Sri Lanka. With years of experience in the tourism industry, we pride ourselves on delivering exceptional service and unforgettable wildlife encounters.</p>
+                    <p>Our team of expert guides and drivers are knowledgeable about Wilpattu's diverse ecosystem and will ensure you have the best possible chance to spot leopards, elephants, sloth bears, and many other species in their natural habitat.</p>
+                    <p>We offer customized safari packages to suit all types of travelers, from solo adventurers to large groups and families.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Wilpattu National Park" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light" id="services">
+        <div class="container">
+            <h2 class="section-title text-center">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1583423230902-754c3a6a413d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Jeep Safari">
+                        <div class="card-body">
+                            <h5 class="card-title">Wilpattu Jeep Safaris</h5>
+                            <p class="card-text">Full-day and half-day safaris in comfortable Toyota Hilux jeeps with experienced guides who know the best spots for wildlife sightings.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Morning & afternoon safaris</li>
+                                <li><i class="fas fa-check text-success"></i> Expert wildlife guides</li>
+                                <li><i class="fas fa-check text-success"></i> Binoculars provided</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Transportation">
+                        <div class="card-body">
+                            <h5 class="card-title">Transportation Services</h5>
+                            <p class="card-text">Reliable airport transfers and hotel pickups/drop-offs across Sri Lanka in our comfortable vehicles.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Airport transfers</li>
+                                <li><i class="fas fa-check text-success"></i> Hotel pickups</li>
+                                <li><i class="fas fa-check text-success"></i> Intercity travel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" class="card-img-top" alt="Tour Packages">
+                        <div class="card-body">
+                            <h5 class="card-title">Custom Tour Packages</h5>
+                            <p class="card-text">Tailored itineraries combining wildlife safaris with cultural experiences and beach relaxation.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> Multi-day packages</li>
+                                <li><i class="fas fa-check text-success"></i> Cultural tours</li>
+                                <li><i class="fas fa-check text-success"></i> Beach extensions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-5" id="gallery">
+        <div class="container">
+            <h2 class="section-title text-center">Wildlife Gallery</h2>
+            <p class="text-center mb-5">Explore the magnificent wildlife of Wilpattu National Park through our gallery</p>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Wilpattu Leopard">
+                        <div class="gallery-overlay">
+                            <h5>Wilpattu Leopard</h5>
+                            <p>The star attraction of Wilpattu National Park</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Sri Lankan Elephant">
+                        <div class="gallery-overlay">
+                            <h5>Sri Lankan Elephant</h5>
+                            <p>Gentle giants of Wilpattu's forests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1564349683135-9263c8a8df0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sloth Bear">
+                        <div class="gallery-overlay">
+                            <h5>Sloth Bear</h5>
+                            <p>A rare and fascinating sight in Wilpattu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1562088287-bde35a1ea917?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" alt="Spotted Deer">
+                        <div class="gallery-overlay">
+                            <h5>Spotted Deer</h5>
+                            <p>Common but beautiful inhabitants</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Crocodile">
+                        <div class="gallery-overlay">
+                            <h5>Mugger Crocodile</h5>
+                            <p>Found in Wilpattu's many villus (lakes)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551085255-e6b7ebe5f3d2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Birdlife">
+                        <div class="gallery-overlay">
+                            <h5>Rich Birdlife</h5>
+                            <p>Over 200 species of birds call Wilpattu home</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Section -->
+    <section class="py-5 bg-light" id="vehicles">
+        <div class="container">
+            <h2 class="section-title text-center">Our Fleet</h2>
+            <p class="text-center mb-5">We maintain a modern fleet of vehicles to ensure your comfort and safety</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="vehicle-card">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Toyota Hilux">
+                        <div class="card-body">
+                            <h5 class="card-title">Toyota Hilux Safari Jeeps</h5>
+                            <p class="card-text">Our rugged yet comfortable Hilux jeeps are perfect for navigating Wilpattu's terrain while providing excellent wildlife viewing opportunities.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-users"></i> Capacity: 6-8 passengers</li>
+                                <li><i class="fas fa-sun"></i> Open roof for optimal viewing</li>
+                                <li><i class="fas fa-shield-alt"></i> Experienced safari drivers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="vehicle-card">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Toyota Townace">
+                        <div class="card-body">
+                            <h5 class="card-title">Toyota Townace Van</h5>
+                            <p class="card-text">Ideal for small groups or families needing comfortable transportation for airport transfers or intercity travel.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-users"></i> Capacity: 6 passengers</li>
+                                <li><i class="fas fa-suitcase"></i> Ample luggage space</li>
+                                <li><i class="fas fa-air-conditioner"></i> Air-conditioned</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="vehicle-card">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Toyota Premio">
+                        <div class="card-body">
+                            <h5 class="card-title">Toyota Premio Sedan</h5>
+                            <p class="card-text">For couples or individuals who prefer luxury travel with all modern amenities.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-users"></i> Capacity: 3 passengers</li>
+                                <li><i class="fas fa-wifi"></i> WiFi available</li>
+                                <li><i class="fas fa-glass-cheers"></i> Bottled water provided</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">What Our Guests Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="fas fa-quote-left text-secondary"></i>
+                            </div>
+                            <p class="card-text">"The Wilpattu safari with RB Tours was the highlight of our Sri Lanka trip. Our guide was incredibly knowledgeable and we spotted a leopard on our first morning!"</p>
+                            <div class="d-flex align-items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" class="rounded-circle me-3" width="50" alt="Sarah">
+                                <div>
+                                    <h6 class="mb-0">Sarah Johnson</h6>
+                                    <small class="text-muted">UK</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="fas fa-quote-left text-secondary"></i>
+                            </div>
+                            <p class="card-text">"Excellent service from airport pickup to safari drop-off. The Hilux jeep was comfortable and our driver knew all the best spots in Wilpattu."</p>
+                            <div class="d-flex align-items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" class="rounded-circle me-3" width="50" alt="Mark">
+                                <div>
+                                    <h6 class="mb-0">Mark Schneider</h6>
+                                    <small class="text-muted">Germany</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <i class="fas fa-quote-left text-secondary"></i>
+                            </div>
+                            <p class="card-text">"We booked a package with safari and hotel transfers. Everything was perfectly organized and the team was very responsive to all our requests."</p>
+                            <div class="d-flex align-items-center mt-4">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="rounded-circle me-3" width="50" alt="Priya">
+                                <div>
+                                    <h6 class="mb-0">Priya Patel</h6>
+                                    <small class="text-muted">India</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 bg-light" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="contact-info">
+                        <div class="text-center">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <h4>Our Location</h4>
+                            <p>Wilpattu Junction, Puttalam Road, Sri Lanka</p>
+                        </div>
+                        <div class="text-center mt-5">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <h4>Email Us</h4>
+                            <p>ishantha.sliit@gmail.com</p>
+                        </div>
+                        <div class="text-center mt-5">
+                            <i class="fas fa-phone-alt contact-icon"></i>
+                            <h4>Call Us</h4>
+                            <p>+94 78 999 0992</p>
+                        </div>
+                        <div class="text-center mt-5">
+                            <h4>Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Send Us a Message</h4>
+                            <form id="contactForm" action="https://formsubmit.co/ishantha.sliit@gmail.com" method="POST">
+                                <input type="hidden" name="_subject" value="New Inquiry from RB Tours Website">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" name="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="service" class="form-label">Service Interested In</label>
+                                    <select class="form-select" id="service" name="service">
+                                        <option value="Wilpattu Jeep Safari">Wilpattu Jeep Safari</option>
+                                        <option value="Airport Transfer">Airport Transfer</option>
+                                        <option value="Hotel Pickup/Drop-off">Hotel Pickup/Drop-off</option>
+                                        <option value="Custom Tour Package">Custom Tour Package</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Your Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5>RB Tours</h5>
+                    <p>Providing exceptional Wilpattu safari experiences and transportation services in Sri Lanka since 2010.</p>
+                    <p>Licensed by the Sri Lanka Tourism Development Authority.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#services">Services</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#vehicles">Our Fleet</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <div class="footer-links">
+                        <a href="#">Wilpattu Safaris</a>
+                        <a href="#">Airport Transfers</a>
+                        <a href="#">Hotel Pickups</a>
+                        <a href="#">Custom Tours</a>
+                        <a href="#">Vehicle Rentals</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Wilpattu Junction, Sri Lanka</p>
+                    <p><i class="fas fa-envelope me-2"></i> ishantha.sliit@gmail.com</p>
+                    <p><i class="fas fa-phone-alt me-2"></i> +94 78 999 0992</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 RB Tours. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // You can add form validation here if needed
+            // If using FormSubmit, the form will be handled by their service
+        });
+    </script>
+</body>
+</html>
